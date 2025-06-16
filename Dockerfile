@@ -2,14 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirement.txt .
+COPY requirements.txt .     
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --no-cache-dir -r requirement.txt
+COPY . .                    
 
-COPY . .
-
-#ENV MSG="Default Message from Docker Flask"
-ENV PORT=5000
-EXPOSE 5000
+ENV PORT=10000
+EXPOSE 10000
 
 CMD ["python3", "app.py"]
