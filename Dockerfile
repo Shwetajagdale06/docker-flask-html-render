@@ -8,8 +8,8 @@ RUN pip install --no-cache-dir -r requirement.txt
 
 COPY . .
 
-ENV MSG="Default Message from Docker Flask"
-
+#ENV MSG="Default Message from Docker Flask"
+ENV PORT=5000
 EXPOSE 5000
 
 CMD ["python3", "app.py"]
